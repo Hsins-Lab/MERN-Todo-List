@@ -1,6 +1,6 @@
 import {
-  FETCH_TODOS,
-  ADD_TODO,
+  GETALL_TODO,
+  ADDNEW_TODO,
   TOGGLE_TODO,
   UPDATE_TODO,
   DELETE_TODO
@@ -8,9 +8,9 @@ import {
 
 export default function(state = [], action) {
   switch (action.type) {
-    case FETCH_TODOS:
+    case GETALL_TODO:
       return action.payload;
-    case ADD_TODO:
+    case ADDNEW_TODO:
       return [action.payload, ...state];
     case TOGGLE_TODO:
       return state.map(todo =>

@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 import TodoForm from './TodoForm';
 import Task from './Task';
 import { connect } from 'react-redux';
-import { fetchTodos, toggleTodo, deleteTodo, toggleTab } from '../actions';
+import { getAllTodo, toggleTodo, deleteTodo, toggleTab } from '../actions';
 import { TABS } from '../actions/types';
 
 class TodoList extends Component {
   componentDidMount = async () => {
-    this.props.fetchTodos();
+    this.props.getAllTodo();
     try {
-      setInterval(async () => {
-        this.props.fetchTodos();
-      }, 10000);
-    } catch (e) {
-      console.log(e);
+      await this.props.getAllTodo();
+    } catch (err) {
+      console.log('[ERROR]');
+      console.log(err.message);
     }
   };
 
@@ -95,5 +94,5 @@ const mapStateToProps = ({ todos, currTab }) => {
 
 export default connect(
   mapStateToProps,
-  { fetchTodos, toggleTodo, deleteTodo, toggleTab }
+  { getAllTodo, toggleTodo, deleteTodo, toggleTab }
 )(TodoList);

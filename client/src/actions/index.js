@@ -1,23 +1,23 @@
 import axios from 'axios';
 import {
-  FETCH_TODOS,
-  ADD_TODO,
+  GETALL_TODO,
+  ADDNEW_TODO,
   TOGGLE_TODO,
   UPDATE_TODO,
   DELETE_TODO,
   TOGGLE_TAB
 } from './types';
 
-export const fetchTodos = () => async dispatch => {
+export const getAllTodo = () => async dispatch => {
   const res = await axios.get('/api/todos');
 
-  dispatch({ type: FETCH_TODOS, payload: res.data });
+  dispatch({ type: GETALL_TODO, payload: res.data });
 };
 
-export const addTodo = name => async dispatch => {
+export const addNewTodo = name => async dispatch => {
   const res = await axios.post('/api/todos', { name });
 
-  dispatch({ type: ADD_TODO, payload: res.data });
+  dispatch({ type: ADDNEW_TODO, payload: res.data });
 };
 
 export const toggleTodo = id => async dispatch => {

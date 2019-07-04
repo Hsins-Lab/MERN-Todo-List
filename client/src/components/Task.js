@@ -3,30 +3,33 @@ import { connect } from 'react-redux';
 import { updateTodo } from '../actions';
 
 class Task extends Component {
-  state = { editing: false, text: '' };
+  constructor(props) {
+    super(props);
+    this.state = { editing: false, text: '' };
+  }
 
   componentDidMount = () => this.setState({ text: this.props.name });
 
-  handleDeleteTodo = e => {
-    e.stopPropagation();
+  handleDeleteTodo = event => {
+    event.stopPropagation();
     this.props.deleteTodo();
   };
 
-  showEditForm = e => {
-    e.stopPropagation();
+  showEditForm = event => {
+    event.stopPropagation();
     this.setState(prevState => ({ editing: !prevState.editing }));
   };
 
-  onInputClick = e => {
-    e.stopPropagation();
+  onInputClick = event => {
+    event.stopPropagation();
   };
 
-  onInputChange = e => {
-    this.setState({ text: e.target.value });
+  onInputChange = event => {
+    this.setState({ text: event.target.value });
   };
 
-  onFormSubmit = e => {
-    e.preventDefault();
+  onFormSubmit = event => {
+    event.preventDefault();
     this.setState(prevState => ({ editing: !prevState.editing }));
     this.props.updateTodo(this.props.id, this.state.text);
   };

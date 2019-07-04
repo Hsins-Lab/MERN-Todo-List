@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addTodo } from '../actions';
+import { addNewTodo } from '../actions';
 
 class TodoForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { text: '' };
   }
 
@@ -14,7 +14,7 @@ class TodoForm extends Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-    this.props.addTodo(this.state.text);
+    this.props.addNewTodo(this.state.text);
     this.setState({ text: '' });
   };
 
@@ -35,5 +35,5 @@ class TodoForm extends Component {
 
 export default connect(
   null,
-  { addTodo }
+  { addNewTodo }
 )(TodoForm);
