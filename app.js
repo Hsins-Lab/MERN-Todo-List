@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const keys = require('./configs/keys');
@@ -7,7 +8,19 @@ const todoRoutes = require('./routes/todos');
 
 // Express settings and middlewares
 const app = express();
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.use('/api/todos', todoRoutes);
+
+// Deploy with client sides
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 // Connect to Database
 const MONGODB_URI = keys.mongoURI;
@@ -24,9 +37,6 @@ mongoose.connection.on('disconnected', () =>
 mongoose.connection.on('error', err =>
   console.log(`Database connect with error: ${err.message}`)
 );
-
-// Routes
-app.use('/api/todos', todoRoutes);
 
 // Server
 const PORT = process.env.PORT || 5566;
