@@ -5,7 +5,7 @@
 |
 | [Method]  [Route]
 | GET	      /api/todos	            取得所有待辦
-| POST	    /api/todos	            新增一件待辦
+| POST      /api/todos	            新增一件待辦
 | GET	      /api/todos/:id	        顯示待辦事項
 | POST	    /api/todos/:id	        完成待辦事項／取消待辦事項
 | PATCH     /api/todos/:id  	      更新待辦事項
