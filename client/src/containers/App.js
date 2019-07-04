@@ -10,11 +10,9 @@ class App extends Component {
           <h1>
             todo<span>List</span>
           </h1>
-          <h2>
-            A MERN (MongoDB + Express.js + React.js + Node.js) Stack Todo-List
-            App
-          </h2>
+          <h2> A MERN (MongoDB + Express.js + React.js + Node.js) Stack Todo-List App </h2>
         </header>
+        <TodoList />
       </div>
     );
   }
