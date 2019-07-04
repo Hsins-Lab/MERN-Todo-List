@@ -104,7 +104,7 @@ router.patch('/:id', async (req, res) => {
 // METHOD  : DELETE
 // ROUTE   : /api/todos:id
 // FUNCTION: Delete the todo
-router.delete('/api/todos/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const todo = await Todo.findByIdAndDelete(req.params.id);
 
