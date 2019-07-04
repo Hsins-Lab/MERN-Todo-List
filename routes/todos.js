@@ -53,7 +53,7 @@ router.post('/', async (req, res) => {
 // METHOD  : GET
 // ROUTE   : /api/todos/:id
 // FUNCTION: Fetch a todo
-router.get('/api/todos/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const todo = await Todo.findById(req.params.id);
 
@@ -67,7 +67,7 @@ router.get('/api/todos/:id', async (req, res) => {
 // METHOD  : POST
 // ROUTE   : /api/todos:id
 // FUNCTION: Toggle todo to be done or not
-router.post('/api/todos/:id', async (req, res) => {
+router.post('/:id', async (req, res) => {
   try {
     const todoRef = await Todo.findById(req.params.id);
     const todo = await Todo.findOneAndUpdate(
@@ -86,7 +86,7 @@ router.post('/api/todos/:id', async (req, res) => {
 // METHOD  : PATCH
 // ROUTE   : /api/todos:id
 // FUNCTION: Modify the todo
-router.patch('/api/todos/:id/edit', async (req, res) => {
+router.patch('/:id', async (req, res) => {
   try {
     const todo = await Todo.findOneAndUpdate(
       { _id: req.params.id },
