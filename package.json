@@ -1,0 +1,34 @@
+{
+  "name": "udemy_todo-list-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "node app.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hsins/udemy_Todo-List.git"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "react",
+    "redux"
+  ],
+  "author": "Hsins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hsins/udemy_Todo-List/issues"
+  },
+  "homepage": "https://github.com/Hsins/udemy_Todo-List#readme",
+  "dependencies": {
+    "concurrently": "^4.1.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.3"
+  }
+}
