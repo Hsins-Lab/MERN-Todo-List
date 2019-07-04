@@ -20,20 +20,21 @@ You can see a complete working example [here](https://hsins-mern-todolist.heroku
 # Features
 
 - A MERN (MongoDB + Express.js + React.js + Node.js) full stack project.
-- RESTful API: 
-  ```
-  -------------------------------------------------------------------------
-  Todos Route
-  -------------------------------------------------------------------------
-  [Method]  [Route]
-  GET       /api/todos              Fetch all todos
-  POST      /api/todos              Create a new todo
-  GET       /api/todos/:id          Fetch a todo status
-  POST      /api/todos/:id          Toggle (complete or not) a task
-  PATCH     /api/todos/:id          Update the todo content
-  DELETE    /api/todos/:id          Delete todo
-  ```
 - Refactored with ES6 and ES7 syntax (eg: async/await)
+- RESTful API:
+
+```
+-------------------------------------------------------------------------
+Todos Route
+-------------------------------------------------------------------------
+[Method]  [Route]
+GET       /api/todos              Fetch all todos
+POST      /api/todos              Create a new todo
+GET       /api/todos/:id          Fetch a todo status
+POST      /api/todos/:id          Toggle (complete or not) a task
+PATCH     /api/todos/:id          Update the todo content
+DELETE    /api/todos/:id          Delete todo
+```
 
 # Technologies
 
