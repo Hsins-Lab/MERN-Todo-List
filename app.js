@@ -43,7 +43,7 @@ const PORT = process.env.PORT || 5566;
 
 app.listen(PORT, () => {
   console.log('┌──────────────────────────────────┐');
-  console.log('│   Yelp Camp Server Started...    │');
+  console.log('│   Todo List Server Started...    │');
   console.log(`│   Listening on the port ${PORT}     │`);
   console.log('│                      (´･ω･`)     │');
   console.log('└──────────────────────────────────┘');
